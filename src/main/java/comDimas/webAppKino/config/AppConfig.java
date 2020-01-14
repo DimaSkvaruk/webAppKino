@@ -32,6 +32,7 @@ public class AppConfig {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
         properties.put("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql"));
+        properties.put("hibernate.ddl-auto", environment.getRequiredProperty("hibernate.ddl-auto"));
         return properties;
 
     }
