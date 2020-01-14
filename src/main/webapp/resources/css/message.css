@@ -1,0 +1,20 @@
+body {
+    background: url("../img/doski_chrnyy_ryad_tekstura_fon_derevo_55220_1920x1080.jpg") #efefef;
+    margin: 0px;
+    padding: 0px;
+    font: 16px/24px Arial, Tahoma, sans-serif;
+}
+
+.message{
+    position:absolute;
+    width:100%;
+    top:50%;
+    text-align:center;
+}
+h1{
+    color: #068bac;
+    text-align: center;
+}
+a{
+    color: #e7f6ff;
+}

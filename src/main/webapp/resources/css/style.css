@@ -1,0 +1,593 @@
+/*Структура сайта*/
+
+
+body {
+    background: url("../img/doski_chrnyy_ryad_tekstura_fon_derevo_55220_1920x1080.jpg") #efefef;
+    margin: 0px;
+    padding: 0px;
+    font: 16px/24px Arial, Tahoma, sans-serif;
+}
+
+/*Шапка сайта*//*Шапка сайта*//*Шапка сайта*//*Шапка сайта*//*Шапка сайта*//*Шапка сайта*//*Шапка сайта*//*Шапка сайта*//*Шапка сайта*/
+.header {
+    text-align: left;
+    color: #830000;
+    /*background: #068bac;*/
+    background: url("../img/blackfon.png");
+    padding: 0px;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+}
+
+.header h1 {
+    font-size: 30px;
+    color: white;
+    display: inline-block;
+    margin: 10px 10px 0px 10px;
+    vertical-align: auto;
+    font-family: Calibri;
+    text-decoration-color: white;
+    text-shadow: 0 0 3px seashell;
+}
+
+.header img {
+    height: 90px;
+}
+
+
+/*Топ мею*//*Топ мею*//*Топ мею*//*Топ мею*//*Топ мею*//*Топ мею*//*Топ мею*//*Топ мею*//*Топ мею*//*Топ мею*//*Топ мею*/
+.topMenu {
+    overflow: hidden;
+    padding: 0px 50px 10px 50px;
+    background: rgba(0, 0, 0, 0.90) url("../img/headline.png") bottom repeat-x;
+}
+
+.topMenu a {
+    float: left;
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    background: rgba(28,28,28,0.9);
+    border: 1px solid rgb(3, 169, 244);
+    padding: 5px 15px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 7px -1px #777;
+    text-shadow: 0px 0px 17px rgb(3, 169, 244);
+    transition: 0.5s ease-in-out;
+}
+
+.topMenu a:hover {
+    background: #b23600;
+    border: 2px solid #862900;
+}
+
+
+/*Контент сайта*//*Контент сайта*//*Контент сайта*//*Контент сайта*//*Контент сайта*//*Контент сайта*//*Контент сайта*/
+.content {
+    position: relative;
+    box-sizing: border-box;
+    min-height: 80%;
+    width: 85%;
+    margin: auto;
+    padding-bottom: 100px;
+}
+
+.card {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.28);
+    padding: 15px;
+    margin: 30px;
+    border-radius: 5px;
+}
+
+.card h3 {
+    font-family: "Trebuchet MS";
+    font-size: 18px;
+    text-align: center;
+    text-decoration-color: white;
+    text-shadow: 0 0 3px seashell;
+    color: white;
+}
+.title {
+    display: inline-block;
+    width: 100%;
+}
+#logo {
+    margin: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#logo img {
+    float:left;
+    width: 220px;
+    height: 326px;
+    border-radius: 10px;
+    border: 1px solid #001a33;
+    padding: 3px;
+}
+
+b {
+    font-weight: bold;
+}
+
+.inside {
+    position: relative;
+    background-color: rgba(0,0,0,0.76);
+    padding: 10px 40px 10px 40px;
+    margin: 5px 20px 20px 20px;
+    border-radius: 10px;
+}
+
+.description {
+    /*position: relative;*/
+    background-color: rgba(128, 128, 128, 0.28);
+    padding: 8px 15px 12px 15px;
+    margin: -5px -5px 0 2px;
+    border-radius: 10px;
+    position: center;
+}
+#profilm{
+    font-size: 17px;
+    color: #ccc;
+    margin-top: 2px;
+    margin-bottom: 7px;
+}
+.contentWrapper {
+    overflow: hidden;
+    line-height: 18px;
+    display: block;
+}
+.left-side{
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.rating {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    width: 80px;
+    display: inline-block;
+    float: left;
+    margin: 10px 10px 1px -5px;
+    font: bold 25px SansSerif;
+    color: white;
+}
+.release{
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    width: 119px;
+    display: inline-block;
+    float: right;
+    vertical-align: top;
+    margin: 10px 6px 3px -1px;
+    font: bold 25px SansSerif;
+    color: white;
+}
+
+.video {
+    vertical-align: center;
+    position: relative;
+    /*background-color: #000;*/
+    border: 1px solid #001a33;
+    border-radius: 10px;
+    padding: 3px;
+    margin-left: -0px;
+    margin-top: 9px;
+    width: 422px;
+    height: 326px;
+    display: inline-block;
+    float: right;
+
+
+}
+
+.video iframe {
+    width: 422px;
+    height: 326px;
+    float: left;
+    border-radius: 10px;
+
+}
+.inside a{
+    color: white;
+    text-decoration: none;
+}
+
+/*Action*//*Action*//*Action*//*Action*//*Action*//*Action*//*Action*//*Action*/
+.action{
+    text-align: center;
+    margin-top: auto;
+    margin: 13px 225px 1px 217px;
+}
+.action a{
+    display: block;
+    font-size: 20px;
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+    text-decoration: none;
+    background: border-box;
+    border: 1px solid rgb(3, 169, 244);
+    padding: 1px 0px;
+    border-radius: 12px;
+    /*box-shadow: 0px 0px 5px 2px rgb(3, 169, 244);*/
+    text-shadow: 0px 0px 20px rgb(3, 169, 244);
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3)
+}
+.style th {
+    color: white;
+    background: rgba(0, 5, 25, 0.75);
+    padding: 10px;
+    font-size: 130%;
+    border-top: 1px solid #efeaea;
+    border-bottom: 1px solid #efeaea;
+    width: 1%;
+}
+
+.style td {
+    width: 1%;
+    padding: 5px;
+}
+
+.style tr {
+    height: 50px;
+    box-shadow: 0 0 5px rgb(15,15,45);
+}
+
+.style tr:nth-child(even) {
+    background: linear-gradient(1deg, rgb(180, 210, 255), rgba(255, 255, 255, 0.9));
+}
+
+.style tr:nth-child(odd) {
+    background: linear-gradient(1deg, rgb(205, 230, 255), rgba(255, 255, 255, 0.9));
+}
+
+.style input {
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background: linear-gradient(1deg, rgb(205, 230, 255), rgba(255, 255, 255, 0.9));
+    outline: none;
+    height: 30px;
+    width: 600px;
+    font:  bold 20px Georgia, serif;
+    text-align: center;
+    text-shadow: 1px 1px 1px #7F7F7F;
+    box-shadow: 3px 3px 25px rgb(15,15,45);
+}
+
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 0px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+
+
+
+
+.checkbox label {
+    display: block;
+    border-radius: 3px;
+    background: linear-gradient(1deg, rgb(180, 200, 220), rgba(255, 255, 255, 0.9));
+    padding-top: 5px;
+    height: 25px;
+    width: 300px;
+    font-size: 20px;
+    box-shadow: 3px 3px 25px rgb(15,15,45);
+    margin: auto;
+    color: rgba(0,0,0,0.2);
+    text-shadow: 0 0;
+    cursor: pointer;
+}
+
+.checkbox label::selection, .checkbox span::selection {
+    background: transparent;
+}
+
+.checkbox label:hover {
+    box-shadow: 0 0 25px rgb(155,155,155);
+}
+
+.checkbox label:active {
+    box-shadow: 0 0 25px rgb(255,255,255);
+}
+
+.checkbox input[type=checkbox] {
+    display: none;
+}
+
+.checkbox-common {
+    display: block;
+    height: 30px;
+    width: 40px;
+    position:relative;
+    margin: auto;
+    font-size: 25px;
+    text-align: center;
+    color: black;
+    text-shadow: 1px 1px 1px #7F7F7F;
+}
+
+.checkbox-yes {
+    bottom: 57px;
+    left: 100px;
+    opacity:0;
+}
+
+.checkbox-no {
+    bottom: 27px;
+    right: 100px;
+}
+
+#watched:checked ~ .checkbox-yes {
+    opacity:1;
+}
+
+#watched:checked ~ .checkbox-no {
+    opacity:0;
+}
+
+input[type=submit] {
+    width: 100px;
+    height: 35px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+input[type=submit]:active {
+    transition: 0s;
+    background: linear-gradient(1deg, rgb(255, 255, 255), rgba(210, 210, 210, 0.9));
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    display: none;
+}
+
+input:hover {
+    box-shadow: 0 0 25px rgb(155,155,155);
+}
+
+input:focus {
+    box-shadow: 0 0 25px rgb(255,255,255);
+}
+
+::-webkit-input-placeholder {
+    font:  bold 100% Georgia, serif;
+    color: rgba(0,0,0,0.2);
+    text-shadow: 0 0;
+}
+/*Нумерація сторінок*//*Нумерація сторінок*//*Нумерація сторінок*//*Нумерація сторінок*//*Нумерація сторінок*//*Нумерація сторінок*/
+
+.heading {
+    text-shadow: 2px 2px 5px #7F7F7F;
+    color: #e7f6ff;
+    font-size: 30px;
+}
+.style {
+    border-spacing: 0 12px;
+    font:  bold 100% Georgia, serif;
+    margin: 40px auto;
+    text-shadow: 1px 1px 1px #7F7F7F;
+    background: #0000;
+    text-align: center;
+    vertical-align: middle;
+    width: 60%;
+}
+
+.style th {
+    color: white;
+    background: rgba(0, 5, 25, 0.75);
+    padding: 10px;
+    font-size: 130%;
+    border-top: 1px solid #efeaea;
+    border-bottom: 1px solid #efeaea;
+    width: 1%;
+}
+
+.style td {
+    width: 1%;
+    padding: 5px;
+}
+
+.style tr {
+    height: 50px;
+    box-shadow: 0 0 5px rgb(15,15,45);
+}
+
+.style tr:nth-child(even) {
+    background: linear-gradient(1deg, rgb(180, 210, 255), rgba(255, 255, 255, 0.9));
+}
+
+.style tr:nth-child(odd) {
+    background: linear-gradient(1deg, rgb(205, 230, 255), rgba(255, 255, 255, 0.9));
+}
+
+
+.pageNum a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 120%;
+    padding: 5px 5px;
+    transition: 1.2s ease-in-out;
+    border-radius: 6px;
+    color: white;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+input:invalid:not(:placeholder-shown) {
+    border: 2px solid red;
+}
+
+input[type=submit] {
+    width: 100px;
+    height: 35px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+input[type=submit]:active {
+    transition: 0s;
+    background: linear-gradient(1deg, rgb(255, 255, 255), rgba(210, 210, 210, 0.9));
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    display: none;
+}
+
+input:hover {
+    box-shadow: 0 0 25px rgb(155,155,155);
+}
+
+input:focus {
+    box-shadow: 0 0 25px rgb(255,255,255);
+}
+
+::-webkit-input-placeholder {
+    font:  bold 100% Georgia, serif;
+    color: rgba(0,0,0,0.2);
+    text-shadow: 0 0;
+}
+
+.pageNum a.disabled {
+    pointer-events: none;
+    cursor: default;
+    box-shadow: 0 0 3px red  ;
+    opacity: 0.5;
+}
+
+.pageNum a.selected {
+    box-shadow: 0 0 25px rgb(255,255,255);
+    background: linear-gradient(1deg, rgb(190, 200, 255), rgba(235, 245, 255, 0.9));
+}
+
+.pageNum  a.current-page {
+    pointer-events: none;
+    cursor: default;
+    font-size: 150%;
+    box-shadow: 0px 0px 5px 2px;
+}
+
+.pageNum a:hover {
+    transition: 0.3s;
+    box-shadow: 0 0 25px rgb(255,255,255);
+}
+
+.pageNum a:active {
+    background: linear-gradient(1deg, rgb(255, 255, 255), rgba(210, 210, 210, 0.9));
+}
+
+.pageNum link a {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.pageNum icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    vertical-align: bottom;
+}
+
+.pageNum icon-add {
+    background-position: 0 0;
+    margin-right: 5px;
+    margin-left: 0;
+}
+
+.pageNum icon-delete {
+    background-position: -24px 0;
+}
+
+.pageNum icon-edit {
+    background-position: -49px 0;
+}
+
+.pageNum icon-watched {
+    background-position: -74px 0;
+}
+
+.pageNum icon-first {
+    background-position: -125px 0;
+    margin: 0;
+}
+
+.pageNum icon-prev {
+    background-position: -147px 0;
+    margin: 0;
+}
+
+.pageNum icon-next {
+    background-position: -166px 0;
+    margin: 0;
+}
+
+.pageNum icon-last {
+    background-position: -188px 0;
+    margin: 0;
+}
+
+
+/*Футтер*//*Футтер*//*Футтер*//*Футтер*//*Футтер*//*Футтер*//*Футтер*//*Футтер*//*Футтер*//*Футтер*/
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.30);
+    color: white;
+    margin-bottom: 0;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    display: block;
+}
+
+.links {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 10px;
+}
+
