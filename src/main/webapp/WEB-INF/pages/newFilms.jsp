@@ -34,7 +34,7 @@
         <c:forEach var="film" items="${newFilms}" varStatus="i">
             <h3>${film.name}</h3>
             <div class="inside">
-                <div class="title">
+                <%--<div class="title">--%>
                     <div id="logo"><img src="${film.img}" alt="logo"></div>
                     <div class="video">${film.video}</div>
                     <div class="left-side">
@@ -55,7 +55,7 @@
                             <%--<span class="icon icon-delete">delete</span>--%>
                         <%--</a>--%>
                     <%--</div>--%>
-                </div>
+                <%--</div>--%>
             </div>
         </c:forEach>
     </div>
