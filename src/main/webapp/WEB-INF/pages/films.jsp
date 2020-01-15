@@ -36,7 +36,7 @@
             <div class="inside">
                     <div class="title">
                         <div id="logo"><img src="${film.img}" alt="logo"></div>
-                        <div class="video"><video src="${film.video}"about="video"></video></div>
+                        <div class="video">${film.video}</div>
                         <div class="left-side">
                             <div class="rating" style="background-color: chartreuse">${film.rate} </div>
                             <div class="release" style="background-color: #068bac">${film.release}</div>
