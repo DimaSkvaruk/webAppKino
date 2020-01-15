@@ -98,7 +98,7 @@ body {
     width: 100%;
 }
 #logo {
-    margin: 10px;
+    margin:auto;
     display: inline-block;
     vertical-align: top;
 }
@@ -120,7 +120,7 @@ b {
     position: relative;
     background-color: rgba(0,0,0,0.76);
     padding: 10px 40px 10px 40px;
-    margin: 5px 20px 20px 20px;
+    margin:auto;
     border-radius: 10px;
 }
 
@@ -176,16 +176,16 @@ b {
 .video {
     vertical-align: center;
     position: relative;
-    /*background-color: #000;*/
     border: 1px solid #001a33;
     border-radius: 10px;
     padding: 3px;
-    margin-left: -0px;
+    margin-left: auto;
     margin-top: 9px;
     width: 422px;
     height: 326px;
     display: inline-block;
-    float: right;
+    /* float: right; */
+    margin: auto;
 
 
 }
