@@ -35,7 +35,7 @@
             <h3>${film.name}</h3>
             <div class="inside">
                     <div class="title">
-                        <div id="logo"><img src="${film.img} ${film.video}" alt="logo"></div>
+                        <div id="logo"><img src="${film.img}" alt="logo"></div>
                         <%--<div class="video">${film.video}</div>--%>
                         <div class="left-side">
                             <div class="rating" style="background-color: chartreuse">${film.rate} </div>
