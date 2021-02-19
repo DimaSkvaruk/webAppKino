@@ -12,17 +12,17 @@ import java.util.List;
 @Controller
 public class FilmController {
     private int page;
-    private FilmDAO filmDAO;
+    private FilmDAO filmService;
 
     @Autowired
     public void setFilmService(FilmDAO filmDAO) {
-        this.filmDAO = filmDAO;
+        this.filmService = filmDAO;
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView allFilms(@RequestParam(defaultValue = "1") int page) {
-        List<Film> films = filmDAO.allFilms(page);
-        int filmsCount = filmDAO.filmsCount();
+        List<Film> films = filmService.allFilms(page);
+        int filmsCount = filmService.filmsCount();
         int pagesCount = (filmsCount + 4)/5;
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("films");
@@ -35,8 +35,8 @@ public class FilmController {
     }
     @RequestMapping(value = "/bestFilms",method = RequestMethod.GET)
     public ModelAndView bestFilms(@RequestParam(defaultValue = "1") int page){
-        List<Film>bestFilms=filmDAO.bestFilms(page);
-        int filmsCount = filmDAO.filmsCount();
+        List<Film>bestFilms= filmService.bestFilms(page);
+        int filmsCount = filmService.filmsCount();
         int pagesCount = (filmsCount + 4)/5;
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.setViewName("bestFilms");
@@ -48,8 +48,8 @@ public class FilmController {
     }
     @RequestMapping(value = "/newFilms",method = RequestMethod.GET)
     public ModelAndView newFilms(@RequestParam(defaultValue = "1") int page){
-        List<Film>newFilms=filmDAO.newFilms(page);
-        int filmsCount = filmDAO.filmsCount();
+        List<Film>newFilms= filmService.newFilms(page);
+        int filmsCount = filmService.filmsCount();
         int pagesCount = (filmsCount + 4)/5;
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.setViewName("newFilms");
@@ -77,10 +77,10 @@ public class FilmController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public ModelAndView addFilm(@ModelAttribute("film") Film film) {
         ModelAndView modelAndView = new ModelAndView();
-        if (filmDAO.checkName(film.getName())) {
+        if (filmService.checkName(film.getName())) {
             modelAndView.setViewName("redirect:/");
             modelAndView.addObject("page", page);
-            filmDAO.add(film);
+            filmService.add(film);
         } else {
             modelAndView.addObject("message","part with title \"" + film.getName() + "\" already exists");
             modelAndView.setViewName("redirect:/add");
@@ -91,7 +91,7 @@ public class FilmController {
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
     public ModelAndView editPage(@PathVariable("id") int id,
                                  @ModelAttribute("message") String message) {
-        Film film = filmDAO.getById(id);
+        Film film = filmService.getById(id);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("editPage");
         modelAndView.addObject("film", film);
@@ -101,10 +101,10 @@ public class FilmController {
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
     public ModelAndView editFilm(@ModelAttribute("film") Film film) {
         ModelAndView modelAndView = new ModelAndView();
-        if (filmDAO.checkName(film.getName()) || filmDAO.getById(film.getId()).getName().equals(film.getName())) {
+        if (filmService.checkName(film.getName()) || filmService.getById(film.getId()).getName().equals(film.getName())) {
             modelAndView.setViewName("redirect:/");
             modelAndView.addObject("page", page);
-            filmDAO.edit(film);
+            filmService.edit(film);
         } else {
             modelAndView.addObject("message","part with title \"" + film.getName() + "\" already exists");
             modelAndView.setViewName("redirect:/edit/" +  + film.getId());
@@ -115,13 +115,13 @@ public class FilmController {
     @RequestMapping(value="/delete/{id}", method = RequestMethod.GET)
     public ModelAndView deleteFilm(@PathVariable("id") int id) {
         ModelAndView modelAndView = new ModelAndView();
-        int filmsCount = filmDAO.filmsCount();
+        int filmsCount = filmService.filmsCount();
         int page = ((filmsCount - 1) % 10 == 0 && filmsCount > 10 && this.page == (filmsCount + 9)/10) ?
                 this.page - 1 : this.page;
         modelAndView.setViewName("redirect:/");
         modelAndView.addObject("page", page);
-        Film film = filmDAO.getById(id);
-        filmDAO.delete(film);
+        Film film = filmService.getById(id);
+        filmService.delete(film);
         return modelAndView;
     }
 }

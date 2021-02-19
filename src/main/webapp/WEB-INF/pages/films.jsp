@@ -22,7 +22,7 @@
     <a href="<c:url value="/newFilms"/>">NEW</a>
     <%--<a href="/ComingSoonServlet">COMING COON</a>--%>
 
-    <%--<a href="<c:url value="/add"/>">ADD</a>--%>
+    <a href="<c:url value="/add"/>">ADD</a>
     <a href="<c:url value="/"/>" style="float: right">Home</a>
     <a href="<c:url value="/about"/>" style="float: right">About</a>
     <a href="<c:url value="/about"/> " style="float: right">Contact us</a>

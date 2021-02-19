@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="webAppKino" target="1.8" />
+      <module name="webAppKino" target="9" />
     </bytecodeTargetLevel>
   </component>
 </project>

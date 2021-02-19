@@ -5,7 +5,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,7 +33,7 @@ public class FilmDAOImpl implements FilmDAO {
     public List<Film> bestFilms(int page) {
         Session session=sessionFactory.getCurrentSession();
 
-       return session.createQuery("from Film where rate>=8.5 order by rate DESC ").setFirstResult(5*(page-1)).setMaxResults(5).list();
+       return session.createQuery("from Film where rate>=8.0 order by rate DESC ").setFirstResult(5*(page-1)).setMaxResults(5).list();
     }
 
     @Override
@@ -46,23 +45,36 @@ public class FilmDAOImpl implements FilmDAO {
 
     @Override
     @Transactional
-    public void add(Film film) {
+    public Film add(Film film) {
         Session session = sessionFactory.getCurrentSession();
         session.persist(film);
+        return film;
     }
 
     @Override
     @Transactional
-    public void delete(Film film) {
+    public boolean delete(Film film) {
         Session session = sessionFactory.getCurrentSession();
         session.delete(film);
+        boolean deleted=false;
+        Film filmAfterDelete = session.get(Film.class, film.getId());
+        if (filmAfterDelete==null){
+            deleted=true;
+        }
+        return deleted;
     }
 
     @Override
     @Transactional
-    public void edit(Film film) {
+    public boolean edit(Film film) {
         Session session = sessionFactory.getCurrentSession();
         session.update(film);
+        Film filmToCompare = session.find(Film.class, film.getId());
+        boolean edited=false;
+        if (film.equals(filmToCompare)){
+             edited=true;
+        }
+        return edited;
     }
 
     @Override
