@@ -92,22 +92,15 @@ class FilmServiceImpTest {
         when(filmDAO.edit(film)).thenReturn(true);
         boolean edited = filmServiceImp.edit(film);
         assertTrue(edited);
-<<<<<<< HEAD
-=======
-
->>>>>>> 4163a87b160b4fd5c99cb70996795ecd63e05a05
     }
 
     @Test
     void getById() {
-<<<<<<< HEAD
+
         Film film = new Film(1, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video");
         when(filmDAO.getById(1)).thenReturn(film);
         Film byId = filmServiceImp.getById(1);
         assertEquals(film, byId);
-=======
-
->>>>>>> 4163a87b160b4fd5c99cb70996795ecd63e05a05
     }
 
     @Test
