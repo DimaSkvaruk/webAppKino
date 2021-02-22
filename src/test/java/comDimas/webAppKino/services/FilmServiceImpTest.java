@@ -91,13 +91,12 @@ class FilmServiceImpTest {
         when(filmDAO.edit(film)).thenReturn(true);
         boolean edited = filmServiceImp.edit(film);
         assertTrue(edited);
-
-
+        
     }
 
     @Test
     void getById() {
-        
+
     }
 
     @Test
