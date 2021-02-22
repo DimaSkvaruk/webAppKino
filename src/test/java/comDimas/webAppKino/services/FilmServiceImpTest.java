@@ -88,7 +88,6 @@ class FilmServiceImpTest {
     @Test
     void edit() {
         Film film = new Film(1, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video");
-
         when(filmDAO.edit(film)).thenReturn(true);
         boolean edited = filmServiceImp.edit(film);
         assertTrue(edited);
