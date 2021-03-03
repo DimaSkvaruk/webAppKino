@@ -47,15 +47,15 @@
                                 <div class="contentWrapper">${film.description}</div>
                             </div>
                         </div>
-                        <%--<div class="action">--%>
-                            <%--<a href="/edit/${film.id}">--%>
-                                <%--<span class="icon icon-edit">edit</span>--%>
-                            <%--</a>--%>
-                            <%--<a href="/delete/${film.id}">--%>
-                                <%--<span class="icon icon-delete">delete</span>--%>
-                            <%--</a>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
+                        <div class="action">
+                            <a href="/edit/${film.id}">
+                                <span class="icon icon-edit">edit</span>
+                            </a>
+                            <a href="/delete/${film.id}">
+                                <span class="icon icon-delete">delete</span>
+                            </a>
+                        </div>
+                    </div>
             </div>
         </c:forEach>
     </div>
