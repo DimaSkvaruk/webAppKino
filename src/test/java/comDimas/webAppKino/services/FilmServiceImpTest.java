@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +68,7 @@ class FilmServiceImpTest {
     void newFilms() {
         when(filmDAO.newFilms(1)).thenReturn(filmList.stream().sorted((o1, o2) -> o1.getRelease().compareTo(o2.getRelease())).collect(Collectors.toList()));
         List<Film> films = filmServiceImp.newFilms(1);
-        films.forEach(e-> System.out.println(e));
+        films.forEach(e -> System.out.println(e));
     }
 
     @Test
@@ -80,7 +81,7 @@ class FilmServiceImpTest {
 
     @Test
     void deleteTest() {
-        when(filmDAO.delete(new Film (1, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video"))).thenReturn(true);
+        when(filmDAO.delete(new Film(1, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video"))).thenReturn(true);
         boolean delete = filmServiceImp.delete(new Film(1, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video"));
         assertTrue(delete);
     }
@@ -91,7 +92,6 @@ class FilmServiceImpTest {
         when(filmDAO.edit(film)).thenReturn(true);
         boolean edited = filmServiceImp.edit(film);
         assertTrue(edited);
-
     }
 
     @Test
@@ -101,6 +101,7 @@ class FilmServiceImpTest {
         Film byId = filmServiceImp.getById(1);
         assertEquals(film, byId);
         System.out.println(byId);
+
     }
 
     @Test
