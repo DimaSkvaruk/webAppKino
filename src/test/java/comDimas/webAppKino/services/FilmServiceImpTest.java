@@ -96,7 +96,11 @@ class FilmServiceImpTest {
 
     @Test
     void getById() {
-
+        Film film = new Film(1, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video");
+        when(filmDAO.getById(1)).thenReturn(film);
+        Film byId = filmServiceImp.getById(1);
+        assertEquals(film, byId);
+        System.out.println(byId);
     }
 
     @Test
