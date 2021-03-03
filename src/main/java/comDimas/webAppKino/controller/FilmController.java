@@ -1,7 +1,10 @@
 package comDimas.webAppKino.controller;
 
+import comDimas.webAppKino.config.AppConfig;
 import comDimas.webAppKino.dao.FilmDAO;
 import comDimas.webAppKino.model.Film;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +14,7 @@ import java.util.List;
 
 @Controller
 public class FilmController {
+
     private int page;
     private FilmDAO filmService;
 
@@ -23,7 +27,7 @@ public class FilmController {
     public ModelAndView allFilms(@RequestParam(defaultValue = "1") int page) {
         List<Film> films = filmService.allFilms(page);
         int filmsCount = filmService.filmsCount();
-        int pagesCount = (filmsCount + 4)/5;
+        int pagesCount = (filmsCount + 4) / 5;
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("films");
         modelAndView.addObject("page", page);
@@ -33,27 +37,30 @@ public class FilmController {
         this.page = page;
         return modelAndView;
     }
-    @RequestMapping(value = "/bestFilms",method = RequestMethod.GET)
-    public ModelAndView bestFilms(@RequestParam(defaultValue = "1") int page){
-        List<Film>bestFilms= filmService.bestFilms(page);
+
+    @RequestMapping(value = "/bestFilms", method = RequestMethod.GET)
+    public ModelAndView bestFilms(@RequestParam(defaultValue = "1") int page) {
+        List<Film> bestFilms = filmService.bestFilms(page);
         int filmsCount = filmService.filmsCount();
-        int pagesCount = (filmsCount + 4)/5;
-        ModelAndView modelAndView=new ModelAndView();
+        int pagesCount = (filmsCount + 4) / 5;
+        ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("bestFilms");
-        modelAndView.addObject("bestFilms",bestFilms);
+        modelAndView.addObject("bestFilms", bestFilms);
         modelAndView.addObject("filmsCount", filmsCount);
         modelAndView.addObject("pagesCount", pagesCount);
         this.page = page;
+
         return modelAndView;
     }
-    @RequestMapping(value = "/newFilms",method = RequestMethod.GET)
-    public ModelAndView newFilms(@RequestParam(defaultValue = "1") int page){
-        List<Film>newFilms= filmService.newFilms(page);
+
+    @RequestMapping(value = "/newFilms", method = RequestMethod.GET)
+    public ModelAndView newFilms(@RequestParam(defaultValue = "1") int page) {
+        List<Film> newFilms = filmService.newFilms(page);
         int filmsCount = filmService.filmsCount();
-        int pagesCount = (filmsCount + 4)/5;
-        ModelAndView modelAndView=new ModelAndView();
+        int pagesCount = (filmsCount + 4) / 5;
+        ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("newFilms");
-        modelAndView.addObject("newFilms",newFilms);
+        modelAndView.addObject("newFilms", newFilms);
         modelAndView.addObject("filmsCount", filmsCount);
         modelAndView.addObject("pagesCount", pagesCount);
         this.page = page;
@@ -61,10 +68,9 @@ public class FilmController {
     }
 
     @RequestMapping(value = "/about")
-    public String message(){
+    public String message() {
         return "message";
     }
-
 
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
@@ -82,7 +88,7 @@ public class FilmController {
             modelAndView.addObject("page", page);
             filmService.add(film);
         } else {
-            modelAndView.addObject("message","part with title \"" + film.getName() + "\" already exists");
+            modelAndView.addObject("message", "part with title \"" + film.getName() + "\" already exists");
             modelAndView.setViewName("redirect:/add");
         }
         return modelAndView;
@@ -106,17 +112,17 @@ public class FilmController {
             modelAndView.addObject("page", page);
             filmService.edit(film);
         } else {
-            modelAndView.addObject("message","part with title \"" + film.getName() + "\" already exists");
-            modelAndView.setViewName("redirect:/edit/" +  + film.getId());
+            modelAndView.addObject("message", "part with title \"" + film.getName() + "\" already exists");
+            modelAndView.setViewName("redirect:/edit/" + +film.getId());
         }
         return modelAndView;
     }
 
-    @RequestMapping(value="/delete/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public ModelAndView deleteFilm(@PathVariable("id") int id) {
         ModelAndView modelAndView = new ModelAndView();
         int filmsCount = filmService.filmsCount();
-        int page = ((filmsCount - 1) % 10 == 0 && filmsCount > 10 && this.page == (filmsCount + 9)/10) ?
+        int page = ((filmsCount - 1) % 10 == 0 && filmsCount > 10 && this.page == (filmsCount + 9) / 10) ?
                 this.page - 1 : this.page;
         modelAndView.setViewName("redirect:/");
         modelAndView.addObject("page", page);
