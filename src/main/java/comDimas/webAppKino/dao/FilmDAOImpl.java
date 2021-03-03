@@ -88,7 +88,7 @@ public class FilmDAOImpl implements FilmDAO {
         if (film.equals(filmToCompare)) {
             edited = true;
         }
-        LOGGER.info(Thread.currentThread().getStackTrace()[1].getMethodName()+" Film after editing "+filmToCompare);
+        LOGGER.info(Thread.currentThread().getStackTrace()[1].getMethodName() + " Film after editing " + filmToCompare);
         return edited;
     }
 
