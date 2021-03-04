@@ -1,7 +1,6 @@
 package comDimas.webAppKino.services;
 
 import comDimas.webAppKino.model.Film;
-
 import java.util.List;
 
 public interface FilmService {

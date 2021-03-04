@@ -1,7 +1,6 @@
 package comDimas.webAppKino.dao;
 
 import comDimas.webAppKino.model.Film;
-
 import java.util.List;
 
 public interface FilmDAO {

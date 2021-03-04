@@ -1,10 +1,7 @@
 package comDimas.webAppKino.controller;
 
-import comDimas.webAppKino.config.AppConfig;
 import comDimas.webAppKino.dao.FilmDAO;
 import comDimas.webAppKino.model.Film;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

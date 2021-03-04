@@ -1,6 +1,5 @@
 package comDimas.webAppKino.dao;
 
-import comDimas.webAppKino.controller.FilmController;
 import comDimas.webAppKino.model.Film;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Comparator;
 import java.util.List;
 
 @Service
