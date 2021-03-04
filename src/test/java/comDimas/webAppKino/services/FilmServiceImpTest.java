@@ -101,7 +101,6 @@ class FilmServiceImpTest {
         Film byId = filmServiceImp.getById(1);
         assertEquals(film, byId);
         System.out.println(byId);
-
     }
 
     @Test
