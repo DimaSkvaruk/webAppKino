@@ -100,7 +100,6 @@ class FilmServiceImpTest {
         when(filmDAO.getById(1)).thenReturn(film);
         Film byId = filmServiceImp.getById(1);
         assertEquals(film, byId);
-        System.out.println(byId);
     }
 
     @Test
