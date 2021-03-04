@@ -1,8 +1,6 @@
 package comDimas.webAppKino.config;
 
 import org.apache.commons.dbcp.BasicDataSource;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,11 +10,9 @@ import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
 import javax.sql.DataSource;
 import java.util.Properties;
 
-import static org.hibernate.cfg.AvailableSettings.*;
 
 @Configuration
 @ComponentScan(basePackages = "comDimas.webAppKino")
