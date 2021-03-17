@@ -1,9 +1,9 @@
-package comDimas.webAppKino.dao;
+package com.Dimas.webAppKino.services;
 
-import comDimas.webAppKino.model.Film;
+import com.Dimas.webAppKino.model.Film;
 import java.util.List;
 
-public interface FilmDAO {
+public interface FilmService {
     List<Film> allFilms(int page);
 
     List<Film> bestFilms(int page);
@@ -21,4 +21,5 @@ public interface FilmDAO {
     int filmsCount();
 
     boolean checkName(String title);
+
 }

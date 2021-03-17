@@ -1,4 +1,4 @@
-package comDimas.webAppKino.model;
+package com.Dimas.webAppKino.model;
 
 import javax.persistence.*;
 import java.sql.Date;

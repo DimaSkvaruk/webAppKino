@@ -1,4 +1,4 @@
-package comDimas.webAppKino.config;
+package com.Dimas.webAppKino.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "comDimas.webAppKino.controller")
+@ComponentScan(basePackages = "com.Dimas.webAppKino.controller")
 public class WebConfig implements WebMvcConfigurer {
 
     @Override

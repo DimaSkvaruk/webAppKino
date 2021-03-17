@@ -1,8 +1,7 @@
-package comDimas.webAppKino.controller;
+package com.Dimas.webAppKino.controller;
 
-import comDimas.webAppKino.dao.FilmDAO;
-import comDimas.webAppKino.model.Film;
-import comDimas.webAppKino.services.FilmService;
+import com.Dimas.webAppKino.model.Film;
+import com.Dimas.webAppKino.services.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -86,7 +85,7 @@ public class FilmController {
             modelAndView.addObject("page", page);
             filmService.add(film);
         } else {
-            modelAndView.addObject("message", "part with title \"" + film.getName() + "\" already exists");
+            modelAndView.addObject("message", "Film with title \"" + film.getName() + "\" already exists");
             modelAndView.setViewName("redirect:/add");
         }
         return modelAndView;
@@ -120,8 +119,7 @@ public class FilmController {
     public ModelAndView deleteFilm(@PathVariable("id") int id) {
         ModelAndView modelAndView = new ModelAndView();
         int filmsCount = filmService.filmsCount();
-        int page = ((filmsCount - 1) % 10 == 0 && filmsCount > 10 && this.page == (filmsCount + 9) / 10) ?
-                this.page - 1 : this.page;
+        int page = ((filmsCount - 1) % 10 == 0 && filmsCount > 10 && this.page == (filmsCount + 9) / 10) ? this.page - 1 : this.page;
         modelAndView.setViewName("redirect:/");
         modelAndView.addObject("page", page);
         Film film = filmService.getById(id);

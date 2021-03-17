@@ -1,16 +1,16 @@
-package comDimas.webAppKino.services;
+package com.Dimas.webAppKino.services;
 
-import comDimas.webAppKino.dao.FilmDAO;
-import comDimas.webAppKino.model.Film;
+import com.Dimas.webAppKino.dao.FilmDAO;
+import com.Dimas.webAppKino.model.Film;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class FilmServiceImp implements comDimas.webAppKino.services.FilmService {
+public class FilmServiceImp implements FilmService {
 
-    FilmDAO filmDAO;
+    private FilmDAO filmDAO;
 
     @Autowired
    public FilmServiceImp(FilmDAO filmDAO){

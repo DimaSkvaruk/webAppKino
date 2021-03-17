@@ -1,6 +1,6 @@
-package comDimas.webAppKino.dao;
+package com.Dimas.webAppKino.dao;
 
-import comDimas.webAppKino.model.Film;
+import com.Dimas.webAppKino.model.Film;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;

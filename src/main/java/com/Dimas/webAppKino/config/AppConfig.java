@@ -1,4 +1,4 @@
-package comDimas.webAppKino.config;
+package com.Dimas.webAppKino.config;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import java.util.Properties;
 
 
 @Configuration
-@ComponentScan(basePackages = "comDimas.webAppKino")
+@ComponentScan(basePackages = "com.Dimas.webAppKino")
 @EnableTransactionManagement
 @PropertySource(value = "classpath:db.properties")
 public class AppConfig {

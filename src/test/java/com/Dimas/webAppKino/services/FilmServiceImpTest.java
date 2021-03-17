@@ -1,7 +1,7 @@
-package comDimas.webAppKino.services;
+package com.Dimas.webAppKino.services;
 
-import comDimas.webAppKino.dao.FilmDAO;
-import comDimas.webAppKino.model.Film;
+import com.Dimas.webAppKino.dao.FilmDAO;
+import com.Dimas.webAppKino.model.Film;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
