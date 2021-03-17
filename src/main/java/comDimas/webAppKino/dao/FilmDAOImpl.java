@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FilmDAOImpl implements FilmDAO {
@@ -67,11 +68,8 @@ public class FilmDAOImpl implements FilmDAO {
     public boolean delete(Film film) {
         Session session = sessionFactory.getCurrentSession();
         session.delete(film);
-        boolean deleted = false;
-        Film filmAfterDelete = session.get(Film.class, film.getId());
-        if (filmAfterDelete == null) {
-            deleted = true;
-        }
+        boolean deleted;
+        deleted=!Optional.ofNullable(session.get(Film.class, film.getId())).isPresent();
         LOGGER.info(Thread.currentThread().getStackTrace()[1].getMethodName() + " Deleted film " + film);
         return deleted;
     }

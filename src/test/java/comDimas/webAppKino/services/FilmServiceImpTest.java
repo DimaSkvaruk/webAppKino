@@ -22,11 +22,11 @@ class FilmServiceImpTest {
     @Mock
     FilmDAO filmDAO;
 
-    FilmServiceImp filmServiceImp;
+    FilmService filmService;
 
     public FilmServiceImpTest() {
         MockitoAnnotations.initMocks(this);
-        this.filmServiceImp = new FilmServiceImp(filmDAO);
+        this.filmService = new FilmServiceImp(filmDAO);
 
     }
 
@@ -46,7 +46,7 @@ class FilmServiceImpTest {
     @Test
     void allFilmsTest() {
         when(filmDAO.allFilms(1)).thenReturn((filmList));
-        List<Film> films = filmServiceImp.allFilms(1);
+        List<Film> films = filmService.allFilms(1);
         films.forEach(e -> System.out.println(e));
         assertArrayEquals(filmList.toArray(), films.toArray());
     }
@@ -57,7 +57,7 @@ class FilmServiceImpTest {
         when(filmDAO.bestFilms(1)).thenReturn(List.of(new Film(11, "Titanic", "description", 8.3, new Date(2000 - 10 - 10), "img", "video"),
                 new Film(2, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video"),
                 new Film(2, "Terminator", "description", 9.3, new Date(2000 - 10 - 10), "img", "video")).stream().filter(r -> r.getRate() >= 8).collect(Collectors.toList()));
-        List<Film> films = filmServiceImp.bestFilms(1);
+        List<Film> films = filmService.bestFilms(1);
         assertArrayEquals(new Film[]{new Film(11, "Titanic", "description", 8.3, new Date(2000 - 10 - 10), "img", "video"),
                 new Film(2, "Terminator", "description", 9.3, new Date(2000 - 10 - 10), "img", "video")}, films.toArray());
     }
@@ -65,7 +65,7 @@ class FilmServiceImpTest {
     @Test
     void newFilms() {
         when(filmDAO.newFilms(1)).thenReturn(filmList.stream().sorted((o1, o2) -> o1.getRelease().compareTo(o2.getRelease())).collect(Collectors.toList()));
-        List<Film> films = filmServiceImp.newFilms(1);
+        List<Film> films = filmService.newFilms(1);
         films.forEach(e -> System.out.println(e));
     }
 
@@ -73,14 +73,14 @@ class FilmServiceImpTest {
     void add() {
         when(filmDAO.add(new Film(1, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video"))).
                 thenReturn(new Film(1, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video"));
-        Film film = filmServiceImp.add(new Film(1, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video"));
+        Film film = filmService.add(new Film(1, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video"));
         assertEquals("Speed", film.getName());
     }
 
     @Test
     void deleteTest() {
         when(filmDAO.delete(new Film(1, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video"))).thenReturn(true);
-        boolean delete = filmServiceImp.delete(new Film(1, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video"));
+        boolean delete = filmService.delete(new Film(1, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video"));
         assertTrue(delete);
     }
 
@@ -88,7 +88,7 @@ class FilmServiceImpTest {
     void edit() {
         Film film = new Film(1, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video");
         when(filmDAO.edit(film)).thenReturn(true);
-        boolean edited = filmServiceImp.edit(film);
+        boolean edited = filmService.edit(film);
         assertTrue(edited);
     }
 
@@ -96,7 +96,7 @@ class FilmServiceImpTest {
     void getById() {
         Film film = new Film(1, "Speed", "description", 6.3, new Date(2000 - 10 - 10), "img", "video");
         when(filmDAO.getById(1)).thenReturn(film);
-        Film byId = filmServiceImp.getById(1);
+        Film byId = filmService.getById(1);
         assertEquals(film, byId);
     }
 

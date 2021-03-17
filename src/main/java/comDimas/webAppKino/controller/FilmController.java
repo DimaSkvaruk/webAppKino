@@ -2,6 +2,7 @@ package comDimas.webAppKino.controller;
 
 import comDimas.webAppKino.dao.FilmDAO;
 import comDimas.webAppKino.model.Film;
+import comDimas.webAppKino.services.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -13,11 +14,11 @@ import java.util.List;
 public class FilmController {
 
     private int page;
-    private FilmDAO filmService;
+    private FilmService filmService;
 
     @Autowired
-    public void setFilmService(FilmDAO filmDAO) {
-        this.filmService = filmDAO;
+    public void setFilmService(FilmService filmService) {
+        this.filmService = filmService;
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
