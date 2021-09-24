@@ -4,6 +4,7 @@ import com.Dimas.webAppKino.model.Film;
 import com.Dimas.webAppKino.services.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,9 +21,10 @@ public class FilmController {
         this.filmService = filmService;
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView allFilms(@RequestParam(defaultValue = "1") int page) {
-        List<Film> films = filmService.allFilms(page);
+
+    @RequestMapping(value = "/{sortBy}", method = RequestMethod.GET)
+    public ModelAndView allFilms(@RequestParam(defaultValue = "1") int page, @PathVariable(required = false) String sortBy) {
+        List<Film> films = filmService.sort(StringUtils.isEmpty(sortBy) ? "all" : sortBy, page);
         int filmsCount = filmService.filmsCount();
         int pagesCount = (filmsCount + 4) / 5;
         ModelAndView modelAndView = new ModelAndView();
@@ -35,34 +37,6 @@ public class FilmController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/bestFilms", method = RequestMethod.GET)
-    public ModelAndView bestFilms(@RequestParam(defaultValue = "1") int page) {
-        List<Film> bestFilms = filmService.bestFilms(page);
-        int filmsCount = filmService.filmsCount();
-        int pagesCount = (filmsCount + 4) / 5;
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("bestFilms");
-        modelAndView.addObject("bestFilms", bestFilms);
-        modelAndView.addObject("filmsCount", filmsCount);
-        modelAndView.addObject("pagesCount", pagesCount);
-        this.page = page;
-
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/newFilms", method = RequestMethod.GET)
-    public ModelAndView newFilms(@RequestParam(defaultValue = "1") int page) {
-        List<Film> newFilms = filmService.newFilms(page);
-        int filmsCount = filmService.filmsCount();
-        int pagesCount = (filmsCount + 4) / 5;
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("newFilms");
-        modelAndView.addObject("newFilms", newFilms);
-        modelAndView.addObject("filmsCount", filmsCount);
-        modelAndView.addObject("pagesCount", pagesCount);
-        this.page = page;
-        return modelAndView;
-    }
 
     @RequestMapping(value = "/about")
     public String message() {
